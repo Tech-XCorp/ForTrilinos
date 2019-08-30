@@ -10,17 +10,18 @@
 %include <extern_forerror.i>
 
 %import <forteuchos.i>
-%import <fortpetra.i>
+%import <@Kokkos_NODE_TYPE@/fortpetra.i>
 
 %include "ForTrilinosInterface_config.hpp"
 
-%inline %{
+%{
 #include "Kokkos_DefaultNode.hpp"
-
+%}
+%inline %{
 typedef double                                  SC;
 typedef int                                     LO;
 typedef long long                               GO;
-typedef Kokkos::Compat::KokkosSerialWrapperNode NO;
+typedef Kokkos::Compat::@Kokkos_NODE_TYPE@      NO;
 typedef char                                    Packet;
 %}
 

@@ -5,6 +5,11 @@
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
+# Need to make this working (not working yet) so below files
+# which were coded to KokkosSerialNode can use the default node.
+# Otherwise OpenMP on but Serial off would fail for example.
+ADD_COMPILE_DEFINITIONS(-DKOKKOS_NODE_TYPE=${Kokkos_NODE_TYPE})
+
 SET(EXTRA_SOURCE
   solver_handle.cpp
   fortrilinos_utilities.cpp
@@ -15,14 +20,17 @@ IF (${PACKAGE_NAME}_ENABLE_Anasazi)
 ENDIF()
 
 IF (ForTrilinos_ENABLE_DeveloperMode)
+  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/fortrilinos.i.in
+    ${CMAKE_CURRENT_SOURCE_DIR}/${Kokkos_NODE_TYPE}/fortrilinos.i @ONLY)
+
   IF (ForTrilinos_EXPORT_SWIG)
     # Generate wrapper and proxy files since MPI is enabled
-    SET(CMAKE_SWIG_OUTDIR "${CMAKE_CURRENT_SOURCE_DIR}/swig")
+    SET(CMAKE_SWIG_OUTDIR "${CMAKE_CURRENT_SOURCE_DIR}/swig/${Kokkos_NODE_TYPE}")
   ENDIF()
 
   LIST(APPEND CMAKE_SWIG_FLAGS -I${CMAKE_CURRENT_SOURCE_DIR}/../../utils/src/)
   MAKE_SWIG_FORTRAN(MODULE fortrilinos
-    SOURCE fortrilinos.i
+    SOURCE ${Kokkos_NODE_TYPE}/fortrilinos.i
     DEPLIBS ${Trilinos_LIBRARIES}
     EXTRASRC ${EXTRA_SOURCE}
     )
@@ -30,8 +38,8 @@ IF (ForTrilinos_ENABLE_DeveloperMode)
 ELSE()
   # Use pre-generated files
   SET(GEN_SOURCE
-    swig/fortrilinos.F90
-    swig/fortrilinosFORTRAN_wrap.cxx)
+    swig/${Kokkos_NODE_TYPE}/fortrilinos.F90
+    swig/${Kokkos_NODE_TYPE}/fortrilinosFORTRAN_wrap.cxx)
 
   TRIBITS_ADD_LIBRARY(
     fortrilinos

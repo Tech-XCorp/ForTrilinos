@@ -27,7 +27,7 @@ namespace ForTrilinos {
     typedef double                                  SC;
     typedef int                                     LO;
     typedef long long                               GO;
-    typedef Kokkos::Compat::KokkosSerialWrapperNode NO;
+    typedef Kokkos::Compat::KOKKOS_NODE_TYPE        NO;
     typedef size_t                                  global_size_t;
 
     typedef Teuchos::ParameterList                  ParameterList;

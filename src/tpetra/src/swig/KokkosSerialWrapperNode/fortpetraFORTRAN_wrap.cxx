@@ -292,7 +292,7 @@ enum AssignmentType {
 typedef double                                  SC;
 typedef int                                     LO;
 typedef long long                               GO;
-typedef Kokkos::Compat::KokkosSerialWrapperNode NO;
+typedef Kokkos::Compat::KokkosSerialWrapperNode      NO;
 typedef char                                    Packet;
 
 

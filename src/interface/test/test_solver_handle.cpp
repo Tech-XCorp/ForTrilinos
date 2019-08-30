@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     typedef double                                  SC;
     typedef int                                     LO;
     typedef long long                               GO;
-    typedef Kokkos::Compat::KokkosSerialWrapperNode NO;
+    typedef Kokkos::Compat::KOKKOS_NODE_TYPE        NO;
 
     using Map         = Tpetra::Map<LO,GO,NO>;
     using MultiVector = Tpetra::MultiVector<SC,LO,GO,NO>;
