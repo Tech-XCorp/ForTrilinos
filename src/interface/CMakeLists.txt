@@ -19,6 +19,8 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 ## Add library, test, and examples.
 ##---------------------------------------------------------------------------##
 
+ADD_COMPILE_DEFINITIONS(KOKKOS_NODE_TYPE=${Kokkos_NODE_TYPE})
+
 ADD_SUBDIRECTORY(src)
 
 TRIBITS_ADD_TEST_DIRECTORIES(test)

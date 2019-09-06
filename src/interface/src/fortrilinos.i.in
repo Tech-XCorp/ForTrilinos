@@ -25,6 +25,8 @@ typedef Kokkos::Compat::@Kokkos_NODE_TYPE@      NO;
 typedef char                                    Packet;
 %}
 
+#define KOKKOS_NODE_TYPE @Kokkos_NODE_TYPE@
+
 // Generate wrappers
 %{
 #include "solver_handle.hpp"

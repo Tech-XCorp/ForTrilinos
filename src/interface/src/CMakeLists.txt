@@ -5,11 +5,6 @@
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
-# Need to make this working (not working yet) so below files
-# which were coded to KokkosSerialNode can use the default node.
-# Otherwise OpenMP on but Serial off would fail for example.
-ADD_COMPILE_DEFINITIONS(-DKOKKOS_NODE_TYPE=${Kokkos_NODE_TYPE})
-
 SET(EXTRA_SOURCE
   solver_handle.cpp
   fortrilinos_utilities.cpp
