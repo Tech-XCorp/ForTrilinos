@@ -710,6 +710,74 @@ SWIGEXPORT void _wrap_TrilinosSolver_init__SWIG_1(SwigClassWrapper const *farg1,
 }
 
 
+SWIGEXPORT void _wrap_TrilinosSolver_setup_matrix(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosSolver *arg1 = (ForTrilinos::TrilinosSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosSolver *", "TrilinosSolver", "ForTrilinos::TrilinosSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_matrix((Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosSolver::Matrix > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
+SWIGEXPORT void _wrap_TrilinosSolver_setup_operator(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosSolver *arg1 = (ForTrilinos::TrilinosSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosSolver *", "TrilinosSolver", "ForTrilinos::TrilinosSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_operator((Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosSolver::Operator > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
 SWIGEXPORT void _wrap_TrilinosSolver_setup_solver(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
   ForTrilinos::TrilinosSolver *arg1 = (ForTrilinos::TrilinosSolver *) 0 ;
   Teuchos::RCP< Teuchos::ParameterList > *arg2 = 0 ;
@@ -739,6 +807,43 @@ SWIGEXPORT void _wrap_TrilinosSolver_setup_solver(SwigClassWrapper const *farg1,
     catch (...)
     {
       SWIG_exception_impl("ForTrilinos::TrilinosSolver::setup_solver(Teuchos::RCP< Teuchos::ParameterList > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
+SWIGEXPORT void _wrap_TrilinosSolver_solve(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigClassWrapper const *farg3) {
+  ForTrilinos::TrilinosSolver *arg1 = (ForTrilinos::TrilinosSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > *arg3 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > tempnull2 ;
+  Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > tempnull3 ;
+  
+  SWIG_check_nonnull(*farg1, "ForTrilinos::TrilinosSolver const *", "TrilinosSolver", "ForTrilinos::TrilinosSolver::solve(Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &,Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > &) const", return );
+  arg1 = static_cast< ForTrilinos::TrilinosSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > * >(farg2->cptr) : &tempnull2;
+  arg3 = farg3->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > * >(farg3->cptr) : &tempnull3;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosSolver::solve(Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &,Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > &) const");;
+    try
+    {
+      // Attempt the wrapped function call
+      ((ForTrilinos::TrilinosSolver const *)arg1)->solve((Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &)*arg2,*arg3);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::solve(Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &,Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > &) const", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::solve(Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &,Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > &) const", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosSolver::solve(Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector const > const &,Teuchos::RCP< ForTrilinos::TrilinosSolver::MultiVector > &) const", SWIG_UnknownError, "An unknown exception occurred", return );
     }
   }
 }
@@ -915,6 +1020,142 @@ SWIGEXPORT void _wrap_TrilinosEigenSolver_init__SWIG_1(SwigClassWrapper const *f
 }
 
 
+SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_matrix(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosEigenSolver *", "TrilinosEigenSolver", "ForTrilinos::TrilinosEigenSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosEigenSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_matrix((Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
+SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_matrix_rhs(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosEigenSolver *", "TrilinosEigenSolver", "ForTrilinos::TrilinosEigenSolver::setup_matrix_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosEigenSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_matrix_rhs((Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_matrix_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Matrix > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
+SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_operator(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosEigenSolver *", "TrilinosEigenSolver", "ForTrilinos::TrilinosEigenSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosEigenSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_operator((Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
+SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_operator_rhs(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+  ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > *arg2 = 0 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > tempnull2 ;
+  
+  SWIG_check_mutable_nonnull(*farg1, "ForTrilinos::TrilinosEigenSolver *", "TrilinosEigenSolver", "ForTrilinos::TrilinosEigenSolver::setup_operator_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", return );
+  arg1 = static_cast< ForTrilinos::TrilinosEigenSolver * >(farg1->cptr);
+  arg2 = farg2->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > * >(farg2->cptr) : &tempnull2;
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)");;
+    try
+    {
+      // Attempt the wrapped function call
+      (arg1)->setup_operator_rhs((Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)*arg2);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_IndexError, e.what(), return );
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_RuntimeError, e.what(), return );
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_operator_rhs(Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::Operator > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
+    }
+  }
+}
+
+
 SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_solver(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
   ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
   Teuchos::RCP< Teuchos::ParameterList > *arg2 = 0 ;
@@ -946,6 +1187,48 @@ SWIGEXPORT void _wrap_TrilinosEigenSolver_setup_solver(SwigClassWrapper const *f
       SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::setup_solver(Teuchos::RCP< Teuchos::ParameterList > const &)", SWIG_UnknownError, "An unknown exception occurred", return );
     }
   }
+}
+
+
+SWIGEXPORT int _wrap_TrilinosEigenSolver_solve(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2, SwigClassWrapper const *farg3, SwigArrayWrapper *farg4) {
+  int fresult ;
+  ForTrilinos::TrilinosEigenSolver *arg1 = (ForTrilinos::TrilinosEigenSolver *) 0 ;
+  Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC > arg2 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > *arg3 = 0 ;
+  Teuchos::ArrayView< int > arg4 ;
+  Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > tempnull3 ;
+  int result;
+  
+  SWIG_check_nonnull(*farg1, "ForTrilinos::TrilinosEigenSolver const *", "TrilinosEigenSolver", "ForTrilinos::TrilinosEigenSolver::solve(Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC >,Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > &,Teuchos::ArrayView< int >) const", return 0);
+  arg1 = static_cast< ForTrilinos::TrilinosEigenSolver * >(farg1->cptr);
+  arg2 = Teuchos::ArrayView<double>(static_cast<double*>(farg2->data), farg2->size);
+  arg3 = farg3->cptr ? static_cast< Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > * >(farg3->cptr) : &tempnull3;
+  arg4 = Teuchos::ArrayView<int>(static_cast<int*>(farg4->data), farg4->size);
+  {
+    // Make sure no unhandled exceptions exist before performing a new action
+    SWIG_check_unhandled_exception_impl("ForTrilinos::TrilinosEigenSolver::solve(Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC >,Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > &,Teuchos::ArrayView< int >) const");;
+    try
+    {
+      // Attempt the wrapped function call
+      result = (int)((ForTrilinos::TrilinosEigenSolver const *)arg1)->solve(arg2,*arg3,arg4);
+    }
+    catch (const std::range_error& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::solve(Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC >,Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > &,Teuchos::ArrayView< int >) const", SWIG_IndexError, e.what(), return 0);
+    }
+    catch (const std::exception& e)
+    {
+      // Store a C++ exception
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::solve(Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC >,Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > &,Teuchos::ArrayView< int >) const", SWIG_RuntimeError, e.what(), return 0);
+    }
+    catch (...)
+    {
+      SWIG_exception_impl("ForTrilinos::TrilinosEigenSolver::solve(Teuchos::ArrayView< ForTrilinos::TrilinosEigenSolver::SC >,Teuchos::RCP< ForTrilinos::TrilinosEigenSolver::MultiVector > &,Teuchos::ArrayView< int >) const", SWIG_UnknownError, "An unknown exception occurred", return 0);
+    }
+  }
+  fresult = static_cast< int >(result);
+  return fresult;
 }
 
 
