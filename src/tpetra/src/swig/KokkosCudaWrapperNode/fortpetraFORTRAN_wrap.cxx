@@ -6730,7 +6730,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsGraph__SWIG_13(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsGraph__SWIG_16(SwigClassWrapper const *farg1) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsGraph__SWIG_14(SwigClassWrapper const *farg1) {
   SwigClassWrapper fresult ;
   Tpetra::CrsGraph< Tpetra::CrsGraph< int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::local_ordinal_type,Tpetra::CrsGraph< int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::global_ordinal_type,Tpetra::CrsGraph< int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::node_type > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsGraph< LO,GO,NO > const > *smartarg1 ;
@@ -9595,81 +9595,7 @@ SWIGEXPORT void _wrap_TpetraCrsGraph_op_assign__(SwigClassWrapper *farg1, SwigCl
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_0(SwigClassWrapper const *farg1) {
-  SwigClassWrapper fresult ;
-  Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > *arg1 = 0 ;
-  Teuchos::RCP< Tpetra::CrsMatrix< SC,LO,GO,NO > const > *smartarg1 ;
-  Tpetra::CrsMatrix< SC,LO,GO,NO > *result = 0 ;
-  
-  SWIG_check_sp_nonnull(farg1, "Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > *", "TpetraCrsMatrix", "Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)", return SwigClassWrapper_uninitialized())
-  smartarg1 = static_cast< Teuchos::RCP<const Tpetra::CrsMatrix<SC,LO,GO,NO> >* >(farg1->cptr);
-  arg1 = const_cast< Tpetra::CrsMatrix<SC,LO,GO,NO>* >(smartarg1->get());
-  {
-    // Make sure no unhandled exceptions exist before performing a new action
-    SWIG_check_unhandled_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)");;
-    try
-    {
-      // Attempt the wrapped function call
-      result = (Tpetra::CrsMatrix< SC,LO,GO,NO > *)new Tpetra::CrsMatrix< SC,LO,GO,NO >((Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)*arg1);
-    }
-    catch (const std::range_error& e)
-    {
-      // Store a C++ exception
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)", SWIG_IndexError, e.what(), return SwigClassWrapper_uninitialized());
-    }
-    catch (const std::exception& e)
-    {
-      // Store a C++ exception
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)", SWIG_RuntimeError, e.what(), return SwigClassWrapper_uninitialized());
-    }
-    catch (...)
-    {
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > const &)", SWIG_UnknownError, "An unknown exception occurred", return SwigClassWrapper_uninitialized());
-    }
-  }
-  fresult.cptr = result ? new Teuchos::RCP< Tpetra::CrsMatrix<SC,LO,GO,NO> >(result SWIG_NO_NULL_DELETER_1) : NULL;
-  fresult.cmemflags = SWIG_MEM_OWN | SWIG_MEM_RVALUE | SWIG_sp_mem_flags;
-  return fresult;
-}
-
-
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_1(SwigClassWrapper const *farg1) {
-  SwigClassWrapper fresult ;
-  Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > *arg1 = 0 ;
-  Tpetra::CrsMatrix< SC,LO,GO,NO > *result = 0 ;
-  
-  SWIG_check_nonnull(*farg1, "Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > *", "SWIGTYPE_p_p_Tpetra__CrsMatrixT_double_int_long_long_KokkoDB95D", "Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)", return SwigClassWrapper_uninitialized());
-  arg1 = *static_cast< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > ** >(farg1->cptr);
-  {
-    // Make sure no unhandled exceptions exist before performing a new action
-    SWIG_check_unhandled_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)");;
-    try
-    {
-      // Attempt the wrapped function call
-      result = (Tpetra::CrsMatrix< SC,LO,GO,NO > *)new Tpetra::CrsMatrix< SC,LO,GO,NO >((Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)*arg1);
-    }
-    catch (const std::range_error& e)
-    {
-      // Store a C++ exception
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)", SWIG_IndexError, e.what(), return SwigClassWrapper_uninitialized());
-    }
-    catch (const std::exception& e)
-    {
-      // Store a C++ exception
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)", SWIG_RuntimeError, e.what(), return SwigClassWrapper_uninitialized());
-    }
-    catch (...)
-    {
-      SWIG_exception_impl("Tpetra::CrsMatrix< SC,LO,GO,NO >::CrsMatrix(Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > &&)", SWIG_UnknownError, "An unknown exception occurred", return SwigClassWrapper_uninitialized());
-    }
-  }
-  fresult.cptr = result ? new Teuchos::RCP< Tpetra::CrsMatrix<SC,LO,GO,NO> >(result SWIG_NO_NULL_DELETER_1) : NULL;
-  fresult.cmemflags = SWIG_MEM_OWN | SWIG_MEM_RVALUE | SWIG_sp_mem_flags;
-  return fresult;
-}
-
-
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_2(SwigClassWrapper const *farg1, size_t const *farg2, int const *farg3, SwigClassWrapper const *farg4) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_0(SwigClassWrapper const *farg1, size_t const *farg2, int const *farg3, SwigClassWrapper const *farg4) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   size_t arg2 ;
@@ -9712,7 +9638,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_2(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_3(SwigClassWrapper const *farg1, size_t const *farg2, int const *farg3) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_1(SwigClassWrapper const *farg1, size_t const *farg2, int const *farg3) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   size_t arg2 ;
@@ -9752,7 +9678,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_3(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_4(SwigClassWrapper const *farg1, size_t const *farg2) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_2(SwigClassWrapper const *farg1, size_t const *farg2) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   size_t arg2 ;
@@ -9790,7 +9716,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_4(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_5(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2, int const *farg3, SwigClassWrapper const *farg4) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_3(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2, int const *farg3, SwigClassWrapper const *farg4) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::ArrayView< std::size_t const > *arg2 = 0 ;
@@ -9835,7 +9761,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_5(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_6(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2, int const *farg3) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_4(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2, int const *farg3) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::ArrayView< std::size_t const > *arg2 = 0 ;
@@ -9877,7 +9803,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_6(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_7(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_5(SwigClassWrapper const *farg1, SwigArrayWrapper *farg2) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::ArrayView< std::size_t const > *arg2 = 0 ;
@@ -9917,7 +9843,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_7(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_8(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3, int const *farg4, SwigClassWrapper const *farg5) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_6(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3, int const *farg4, SwigClassWrapper const *farg5) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -9963,7 +9889,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_8(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_9(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3, int const *farg4) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_7(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3, int const *farg4) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10006,7 +9932,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_9(SwigClassWrapper c
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_10(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_8(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, size_t const *farg3) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10047,7 +9973,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_10(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_11(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, int const *farg4, SwigClassWrapper const *farg5) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_9(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, int const *farg4, SwigClassWrapper const *farg5) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10095,7 +10021,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_11(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_12(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, int const *farg4) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_10(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, int const *farg4) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10140,7 +10066,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_12(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_13(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_11(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10183,7 +10109,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_13(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_14(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_12(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::crs_graph_type const > *arg1 = 0 ;
   Teuchos::RCP< Teuchos::ParameterList > *arg2 = 0 ;
@@ -10222,7 +10148,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_14(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_15(SwigClassWrapper const *farg1) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_13(SwigClassWrapper const *farg1) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::crs_graph_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::crs_graph_type const > tempnull1 ;
@@ -10258,7 +10184,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_15(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_20(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, SwigArrayWrapper *farg4, SwigArrayWrapper *farg5, SwigClassWrapper const *farg6) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_18(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, SwigArrayWrapper *farg4, SwigArrayWrapper *farg5, SwigClassWrapper const *farg6) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10324,7 +10250,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_20(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_21(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, SwigArrayWrapper *farg4, SwigArrayWrapper *farg5) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_19(SwigClassWrapper const *farg1, SwigClassWrapper const *farg2, SwigArrayWrapper *farg3, SwigArrayWrapper *farg4, SwigArrayWrapper *farg5) {
   SwigClassWrapper fresult ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg1 = 0 ;
   Teuchos::RCP< Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode >::map_type const > *arg2 = 0 ;
@@ -10387,7 +10313,7 @@ SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_21(SwigClassWrapper 
 }
 
 
-SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_30(SwigClassWrapper const *farg1, int const *farg2) {
+SWIGEXPORT SwigClassWrapper _wrap_new_TpetraCrsMatrix__SWIG_26(SwigClassWrapper const *farg1, int const *farg2) {
   SwigClassWrapper fresult ;
   Tpetra::CrsMatrix< double,int,long long,Kokkos::Compat::KokkosCudaWrapperNode > *arg1 = 0 ;
   Teuchos::DataAccess arg2 ;
