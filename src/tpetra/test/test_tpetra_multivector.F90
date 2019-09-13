@@ -48,11 +48,164 @@ program test_TpetraMultiVector
   !ADD_SUBTEST_AND_RUN(TpetraMultiVector_getCopyOrView)
   !ADD_SUBTEST_AND_RUN(TpetraMultiVector_removeEmptyProcessesInPlace)
 
+#ifdef KOKKOS_ENABLE_CUDA
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_sync_host)
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_sync_device)
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_need_sync_host)
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_need_sync_device)
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_modify_device)
+  ADD_SUBTEST_AND_RUN(TpetraMultiVector_modify_host)
+#endif
+
   call comm%release()
 
   TEARDOWN_TEST()
 
 contains
+
+#ifdef KOKKOS_ENABLE_CUDA
+  ! --------------------------------sync_host--------------------------------- !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_sync_host)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_sync_host!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    TEST_ASSERT(Vec%need_sync_host())
+    call Vec%sync_host();
+    TEST_ASSERT(.not. Vec%need_sync_host())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_sync_host!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_sync_host)
+
+  ! -------------------------------sync_device-------------------------------- !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_sync_device)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_sync_device!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    call Vec%modify_host();
+    TEST_ASSERT(Vec%need_sync_device())
+    call Vec%sync_device()
+    TEST_ASSERT(.not. Vec%need_sync_device())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_sync_device!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_sync_device)
+
+  ! ------------------------------need_sync_host------------------------------ !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_need_sync_host)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_need_sync_host!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    TEST_ASSERT(Vec%need_sync_host())
+    call Vec%sync_host();
+    TEST_ASSERT(.not. Vec%need_sync_host())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_need_sync_host!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_need_sync_host)
+
+  ! -----------------------------need_sync_device----------------------------- !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_need_sync_device)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_need_sync_device!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    TEST_ASSERT(.not. Vec%need_sync_device())
+    call Vec%modify_host();
+    TEST_ASSERT(Vec%need_sync_device())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_need_sync_device!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_need_sync_device)
+
+  ! ------------------------------modify_device------------------------------- !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_modify_device)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_modify_device!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    call Vec%sync_host();
+    TEST_ASSERT(.not. Vec%need_sync_host())
+    call Vec%modify_device()
+    TEST_ASSERT(Vec%need_sync_host())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_modify_device!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_modify_device)
+
+  ! -------------------------------modify_host-------------------------------- !
+  FORTRILINOS_UNIT_TEST(TpetraMultiVector_modify_host)
+    type(TpetraMap) :: map
+    type(TpetraMultiVector) :: Vec
+    integer(size_type), parameter :: num_vecs=2
+    integer, parameter :: num_local=10
+
+    OUT0("Starting TpetraMultiVector_modify_host!")
+
+    map = TpetraMap(TPETRA_GLOBAL_INVALID, num_local, comm); TEST_IERR()
+    Vec = TpetraMultiVector(map, num_vecs)
+
+    TEST_ASSERT(.not. Vec%need_sync_device())
+    call Vec%modify_host()
+    TEST_ASSERT(Vec%need_sync_device())
+
+    call Vec%release(); TEST_IERR()
+    call map%release(); TEST_IERR()
+
+    OUT0("Finished TpetraMultiVector_modify_host!")
+
+  END_FORTRILINOS_UNIT_TEST(TpetraMultiVector_modify_host)
+
+! KOKKOS_ENABLE_CUDA
+#endif
 
   ! -----------------------------ZeroScaleUpdate------------------------------ !
   FORTRILINOS_UNIT_TEST(TpetraMultiVector_ZeroScaleUpdate)
