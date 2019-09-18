@@ -15,17 +15,15 @@ IF (${PACKAGE_NAME}_ENABLE_Anasazi)
 ENDIF()
 
 IF (ForTrilinos_ENABLE_DeveloperMode)
-  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/fortrilinos.i.in
-    ${CMAKE_CURRENT_SOURCE_DIR}/${Kokkos_NODE_TYPE}/fortrilinos.i @ONLY)
 
   IF (ForTrilinos_EXPORT_SWIG)
     # Generate wrapper and proxy files since MPI is enabled
-    SET(CMAKE_SWIG_OUTDIR "${CMAKE_CURRENT_SOURCE_DIR}/swig/${Kokkos_NODE_TYPE}")
+    SET(CMAKE_SWIG_OUTDIR "${CMAKE_CURRENT_SOURCE_DIR}/swig")
   ENDIF()
 
   LIST(APPEND CMAKE_SWIG_FLAGS -I${CMAKE_CURRENT_SOURCE_DIR}/../../utils/src/)
   MAKE_SWIG_FORTRAN(MODULE fortrilinos
-    SOURCE ${Kokkos_NODE_TYPE}/fortrilinos.i
+    SOURCE fortrilinos.i
     DEPLIBS ${Trilinos_LIBRARIES}
     EXTRASRC ${EXTRA_SOURCE}
     )
@@ -33,8 +31,8 @@ IF (ForTrilinos_ENABLE_DeveloperMode)
 ELSE()
   # Use pre-generated files
   SET(GEN_SOURCE
-    swig/${Kokkos_NODE_TYPE}/fortrilinos.F90
-    swig/${Kokkos_NODE_TYPE}/fortrilinosFORTRAN_wrap.cxx)
+    swig/fortrilinos.F90
+    swig/fortrilinosFORTRAN_wrap.cxx)
 
   TRIBITS_ADD_LIBRARY(
     fortrilinos
